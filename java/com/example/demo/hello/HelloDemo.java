@@ -1,7 +1,17 @@
 package com.example.demo.hello;
 
 import java.util.Scanner;
-
+/**
+ * packageName        : com.example.demo.calc
+ * fileName           : HelloDemo.java
+ * author             : nohhongju
+ * date               : 2022-01-25
+ * desc               : 헬로우 앱을 실해하는 컨트롤러
+ * ================================
+ * DATE        AUTHOR        NOTE
+ * ================================
+ * 2022-01-25    nohhongju    최초 생성
+ */
 public class HelloDemo {
     public static void main(String[] args) {
         HelloApp helloApp = new HelloApp();
