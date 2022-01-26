@@ -1,4 +1,4 @@
-package com.example.demo.calc.google;
+package com.example.demo.google;
 
 import java.util.Scanner;
 
