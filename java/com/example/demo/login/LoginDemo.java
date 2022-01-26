@@ -18,14 +18,15 @@ public class LoginDemo {
     public static void main(String[] args) {
         LoginApp loginApp = new LoginApp();
         Scanner scanner = new Scanner(System.in);
-        System.out.println(loginApp.LOGIN_APP);
-        System.out.println("아이디 : ");
+        System.out.println(LoginApp.LOGIN_APP);
+        System.out.println("id");
         String id = scanner.next();
-        System.out.println("비밀번호 : ");
+        System.out.println("pw");
         String pw = scanner.next();
-        System.out.println("이름 : ");
+        System.out.println("name");
         String name = scanner.next();
         String res = loginApp.login(id, pw, name);
         System.out.println(res);
+
     }
 }

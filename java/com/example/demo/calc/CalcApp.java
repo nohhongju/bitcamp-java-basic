@@ -9,7 +9,7 @@ package com.example.demo.calc;
  * DATE        AUTHOR        NOTE
  * ================================
  * 2022-01-25    nohhongju    최초 생성
- * 2022-01-26    nohhongju    if 절 추가, 4칙연산 가능하도록 개선한
+ * 2022-01-26    nohhongju    if 절과 switch 추가, 4칙연산 가능하도록 개선한
  */
 public class CalcApp {
     static String CALC_APP = "계산기";
@@ -23,6 +23,7 @@ public class CalcApp {
        this.opcode = opcode;
        this.num2 = num2;
        int res = 0;
+       /*
        if (opcode.equals("+")){
            res = num1 + num2;
        }else if (opcode.equals("-")){
@@ -31,9 +32,14 @@ public class CalcApp {
            res = num1 * num2;
        }else if (opcode.equals("/")){
            res = num1 / num2;
-       }
+       }*/
 
-       //switch (){}
+       switch (opcode){
+           case "+": res = num1 + num2; break;
+           case "-": res = num1 - num2; break;
+           case "*": res = num1 * num2; break;
+           case "/": res = num1 / num2; break;
+       }
 
        String result = String.format("%d %s %d = %d ",this.num1, this.opcode, this.num2, res);
        return result;
