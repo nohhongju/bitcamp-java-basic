@@ -25,7 +25,7 @@ public class BMIApp {
         this.name = name;
         this.height = height;
         this.weight = weight;
-        String res = String.format("");
+        String res = String.format("%s의 수치는 정상입니다", this.name, this.height, this.weight);
         return res;
     }
 
