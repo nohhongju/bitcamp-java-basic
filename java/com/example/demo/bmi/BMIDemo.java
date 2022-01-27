@@ -14,18 +14,9 @@ import java.util.Scanner;
  * 2022-01-25    nohhongju    최초 생성
  */
 public class BMIDemo {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+    public String  execute(String name, String height, String weight) {
         BMIApp bmiApp = new BMIApp();
-        System.out.println(bmiApp.BMI_APP);
-        System.out.println("name");
-        String name = scanner.next();
-        System.out.println("height");
-        String height = scanner.next();
-        System.out.println("weight");
-        String weight = scanner.next();
-        String res = bmiApp.bmi(name, height, weight);
-        System.out.println(res);
+        return bmiApp.getBmi(name, height, weight);
 
     }
 }

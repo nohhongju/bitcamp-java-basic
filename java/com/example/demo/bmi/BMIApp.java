@@ -21,12 +21,15 @@ public class BMIApp {
     private String height;
     private String weight;
 
-    public String bmi(String name, String height, String weight){
+    public String getBmi(String name, String height, String weight) {
         this.name = name;
         this.height = height;
         this.weight = weight;
         String res = String.format("%s의 수치는 정상입니다", this.name, this.height, this.weight);
         return res;
     }
-
 }
+
+
+
+

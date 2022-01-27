@@ -12,7 +12,8 @@ package com.example.demo.calc;
  * 2022-01-26    nohhongju    if 절과 switch 추가, 4칙연산 가능하도록 개선한
  */
 public class CalcApp {
-    static String CALC_APP = "계산기";
+
+   public static String CALC_APP = "계산기";
    private int num1;
    private String opcode;
    private int num2;

@@ -14,13 +14,9 @@ import java.util.Scanner;
  * 2022-01-25    nohhongju    최초 생성
  */
 public class GoogleDemo {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+    public String execute(String search) {
         GoolgeApp goolgeApp = new GoolgeApp();
-        System.out.println(goolgeApp.GOOGLE_APP);
-        System.out.println("Search word : ");
-        String search = scanner.next();
-        String res = goolgeApp.google(search);
-        System.out.println(res);
+        return goolgeApp.google(search);
+
     }
 }

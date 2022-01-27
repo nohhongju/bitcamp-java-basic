@@ -12,7 +12,7 @@ package com.example.demo.login;
  * 2022-01-26    nohhongju    if 절과 switch, 삼항연산자 사용
  */
 public class LoginApp {
-    static String LOGIN_APP = "로그인앱";
+    public static String LOGIN_APP = "로그인앱";
     String id;
     String pw;
     String name;

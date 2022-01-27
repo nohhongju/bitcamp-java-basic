@@ -13,14 +13,10 @@ import java.util.Scanner;
  * 2022-01-25    nohhongju    최초 생성
  */
 public class CalcDemo {
-    public static void main(String[] args) {
+    public String  execute(int num1, String opcode, int num2) {
         CalcApp calcApp = new CalcApp();
-        Scanner scanner = new Scanner(System.in);
-        System.out.println(CalcApp.CALC_APP);
-        int num1 = scanner.nextInt();
-        String opcode = scanner.next();
-        int num2 = scanner.nextInt();
-        String result = calcApp.calc(num1, opcode, num2);
-        System.out.println(result);
+        return calcApp.calc(num1, opcode, num2);
+
+
     }
 }
