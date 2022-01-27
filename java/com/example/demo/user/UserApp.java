@@ -12,4 +12,10 @@ package com.example.demo.user;
  * 2022-01-26    nohhongju    최초 생성
  */
 public class UserApp {
+    public String getUser(){
+        String user = String.format("");
+        return user;
+    }
+
+
 }

@@ -42,10 +42,10 @@ public class GradeApp {
         this.kor = kor;
         this.eng = eng;
         this.math = math;
-        int total = 0;
-        int avg = 0;
+        int total = kor + eng + math;
+        int avg = total / 3;
         String pass = (avg >= 60) ? "합격" : "불합격";
-        String res = String.format(" ########## %s ########\n" +
+        String grade = String.format(" ########## %s ########\n" +
                 " * 이름: %s\n" +
                 " * > 국어: %d점 \n" +
                 " * > 영어: %d점 \n" +
@@ -54,7 +54,7 @@ public class GradeApp {
                 " * 평균(정수): %d점\n" +
                 " * 합격여부: %s\n" +
                 " * #######################", GradeApp.GRADE_TITLE, name, kor, eng, math, total, avg, pass);
-        return res;
+        return grade;
 
 
     }
