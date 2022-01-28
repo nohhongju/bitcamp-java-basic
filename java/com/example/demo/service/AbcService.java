@@ -1,4 +1,6 @@
-package com.example.demo.abc;
+package com.example.demo.service;
+
+import com.example.demo.domain.AbcDTO;
 
 import java.util.Scanner;
 
@@ -13,10 +15,10 @@ import java.util.Scanner;
  * ================================
  * 2022-01-26    nohhongju    최초 생성
  */
-public class AbcDemo {
+public class AbcService {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        ABCApp abcApp = new ABCApp();
+        AbcDTO abcApp = new AbcDTO();
         String res = abcApp.getAbc();
         System.out.println(res);
     }

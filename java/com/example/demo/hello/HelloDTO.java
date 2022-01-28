@@ -10,7 +10,7 @@ package com.example.demo.hello;
  * ================================
  * 2022-01-25    nohhongju    최초 생성
  */
-public class HelloApp {
+public class HelloDTO {
     static String HELLO_APP = "헬로우";
     String name;
     int age;

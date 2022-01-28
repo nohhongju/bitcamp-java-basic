@@ -1,4 +1,4 @@
-package com.example.demo.abc;
+package com.example.demo.domain;
 
 /**
  * packageName        : com.example.demo.abc
@@ -11,7 +11,7 @@ package com.example.demo.abc;
  * ================================
  * 2022-01-26    nohhongju    최초 생성
  */
-public class ABCApp {
+public class AbcDTO {
     public String getAbc(){
         String abc = String.format("");
         return abc;

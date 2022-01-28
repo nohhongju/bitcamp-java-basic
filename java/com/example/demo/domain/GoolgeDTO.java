@@ -1,4 +1,4 @@
-package com.example.demo.google;
+package com.example.demo.domain;
 
 /**
  * packageName        : com.example.demo.calc.google
@@ -16,16 +16,15 @@ package com.example.demo.google;
  * ================================
  * 2022-01-25    nohhongju    최초 생성
  */
-public class GoolgeApp {
+public class GoolgeDTO {
     public static String GOOLGE_APP = "google";
     private String search;
 
-    public String google(String search){
-        this.search = search;
-        String res = "%s 검색결과입니다.";
-        return String.format(res, this.search);
-
-
-
+    public String getSearch(){
+        return search;
     }
+    public void setSearch(String search){
+        this.search = search;
+    }
+
 }

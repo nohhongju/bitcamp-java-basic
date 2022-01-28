@@ -11,7 +11,7 @@ package com.example.demo.kakao;
  * 2022-01-25    nohhongju    최초 생성
  */
 
-public class KakaoApp {
+public class KakaoDTO {
     static String KAKAO_APP = "카카오";
     String telno;
     String message;

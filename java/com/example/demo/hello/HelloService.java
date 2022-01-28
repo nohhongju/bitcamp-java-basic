@@ -1,5 +1,7 @@
 package com.example.demo.hello;
 
+import com.example.demo.hello.HelloDTO;
+
 import java.util.Scanner;
 /**
  * packageName        : com.example.demo.calc
@@ -12,9 +14,9 @@ import java.util.Scanner;
  * ================================
  * 2022-01-25    nohhongju    최초 생성
  */
-public class HelloDemo {
+public class HelloService {
     public static void main(String[] args) {
-        HelloApp helloApp = new HelloApp();
+        HelloDTO helloApp = new HelloDTO();
         Scanner scanner = new Scanner(System.in);
         System.out.println(helloApp.HELLO_APP);
         System.out.println("이름 : ");

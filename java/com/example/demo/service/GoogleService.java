@@ -1,6 +1,6 @@
-package com.example.demo.google;
+package com.example.demo.service;
 
-import java.util.Scanner;
+import com.example.demo.domain.GoolgeDTO;
 
 /**
  * packageName        : com.example.demo.calc.google
@@ -13,10 +13,10 @@ import java.util.Scanner;
  * ================================
  * 2022-01-25    nohhongju    최초 생성
  */
-public class GoogleDemo {
-    public String execute(String search) {
-        GoolgeApp goolgeApp = new GoolgeApp();
-        return goolgeApp.google(search);
+public class GoogleService {
+    public String getGoolge(GoolgeDTO goolge) {
+
+        return String.format("%s의 검색결과입니다", goolge.getSearch());
 
     }
 }

@@ -1,15 +1,15 @@
 package com.example.demo.controller;
 
-import com.example.demo.bmi.BmiDTO;
-import com.example.demo.bmi.BmiService;
-import com.example.demo.calc.CalcApp;
-import com.example.demo.calc.CalcDemo;
-import com.example.demo.google.GoogleDemo;
-import com.example.demo.google.GoolgeApp;
-import com.example.demo.grade.GradeApp;
-import com.example.demo.grade.GradeDemo;
-import com.example.demo.login.LoginApp;
-import com.example.demo.login.LoginDemo;
+import com.example.demo.domain.BmiDTO;
+import com.example.demo.service.BmiService;
+import com.example.demo.domain.CalcDTO;
+import com.example.demo.service.CalcService;
+import com.example.demo.service.GoogleService;
+import com.example.demo.domain.GoolgeDTO;
+import com.example.demo.domain.GradeDTO;
+import com.example.demo.service.GradeService;
+import com.example.demo.domain.LoginDTO;
+import com.example.demo.service.LoginService;
 
 import java.util.Scanner;
 
@@ -28,11 +28,16 @@ public class DemoController {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         BmiDTO bmi = new BmiDTO();
+        CalcDTO calc = new CalcDTO();
+        GoolgeDTO google = new GoolgeDTO();
+        GradeDTO grade = new GradeDTO();
+        LoginDTO login = new LoginDTO();
+
         BmiService bmiService = new BmiService();
-        CalcDemo calcDemo = new CalcDemo();
-        GoogleDemo googleDemo = new GoogleDemo();
-        GradeDemo gradeDemo = new GradeDemo();
-        LoginDemo loginDemo = new LoginDemo();
+        CalcService calcService = new CalcService();
+        GoogleService googleService = new GoogleService();
+        GradeService gradeService = new GradeService();
+        LoginService loginService = new LoginService();
 
         while (true) {
             System.out.println("메뉴 선택");
@@ -51,20 +56,31 @@ public class DemoController {
                     res = bmiService.getBmi(bmi);
                     break;
                 case "2":
-                    System.out.println(CalcApp.CALC_APP+"\n숫자1, 연사자, 숫자2 입력");
-                    res = calcDemo.execute(scanner.nextInt(), scanner.next(), scanner.nextInt());
-                break;
+                    System.out.println(CalcDTO.CALC_APP+"\n숫자1, 연사자, 숫자2 입력");
+                    calc.setNum1(scanner.nextInt());
+                    calc.setOpcode(scanner.next());
+                    calc.setNum2(scanner.nextInt());
+                    res = calcService.getCalc(calc);
+                    break;
                 case "3":
-                    System.out.println(GoolgeApp.GOOLGE_APP +"\n검색어 입력");
-                    res = googleDemo.execute(scanner.next());
+                    System.out.println(GoolgeDTO.GOOLGE_APP +"\n검색어 입력");
+                    google.setSearch(scanner.next());
+                    res = googleService.getGoolge(google);
                     ;break;
                 case "4":
-                    System.out.println(GradeApp.GRADE_TITLE+"\n이름, 국어, 영어, 수학 입력");
-                    res = gradeDemo.execute(scanner.next(), scanner.nextInt(), scanner.nextInt(), scanner.nextInt());
+                    System.out.println(GradeDTO.GRADE_TITLE+"\n이름, 국어, 영어, 수학 입력");
+                    grade.setName(scanner.next());
+                    grade.setKor(scanner.nextInt());
+                    grade.setEng(scanner.nextInt());
+                    grade.setMath(scanner.nextInt());
+                    res = gradeService.getGrade(grade);
                     ;break;
                 case "5":
-                    System.out.println(LoginApp.LOGIN_APP+"\nID, PW, Name 입력");
-                    res = loginDemo.execute(scanner.next(), scanner.next(), scanner.next());
+                    System.out.println(LoginDTO.LOGIN_APP+"\nID, PW, Name 입력");
+                    login.setId(scanner.next());
+                    login.setPw(scanner.next());
+                    login.setName(scanner.next());
+                    res = loginService.getLogin(login);
                     ;break;
                 default: res = "WRONG";break;
             }

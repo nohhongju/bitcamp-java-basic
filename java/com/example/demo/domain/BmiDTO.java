@@ -1,4 +1,4 @@
-package com.example.demo.bmi;
+package com.example.demo.domain;
 
 /**
  * packageName        : com.example.demo.bmi
