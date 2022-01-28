@@ -1,7 +1,5 @@
 package com.example.demo.bmi;
 
-import java.util.Scanner;
-
 /**
  * packageName        : com.example.demo.bmi
  * fileName           : BMIDemo
@@ -13,10 +11,10 @@ import java.util.Scanner;
  * ================================
  * 2022-01-25    nohhongju    최초 생성
  */
-public class BMIDemo {
-    public String  execute(String name, String height, String weight) {
-        BMIApp bmiApp = new BMIApp();
-        return bmiApp.getBmi(name, height, weight);
+public class BmiService {
+    public String getBmi(BmiDTO bmi) {
 
+        return String.format("%s의 수치는 정상입니다", bmi.getName());
     }
+
 }

@@ -1,7 +1,7 @@
 package com.example.demo.controller;
 
-import com.example.demo.bmi.BMIApp;
-import com.example.demo.bmi.BMIDemo;
+import com.example.demo.bmi.BmiDTO;
+import com.example.demo.bmi.BmiService;
 import com.example.demo.calc.CalcApp;
 import com.example.demo.calc.CalcDemo;
 import com.example.demo.google.GoogleDemo;
@@ -27,7 +27,8 @@ import java.util.Scanner;
 public class DemoController {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        BMIDemo bmiDemo = new BMIDemo();
+        BmiDTO bmi = new BmiDTO();
+        BmiService bmiService = new BmiService();
         CalcDemo calcDemo = new CalcDemo();
         GoogleDemo googleDemo = new GoogleDemo();
         GradeDemo gradeDemo = new GradeDemo();
@@ -43,20 +44,23 @@ public class DemoController {
                 case "0":
                     System.out.println("Exit");return;
                 case "1":
-                    System.out.println(BMIApp.BMI_APP+"\n 이름, 키, 몸무게 입력");
-                    res = bmiDemo.execute(scanner.next(), scanner.next(), scanner.next());
-                    ;break;
+                    System.out.println(BmiDTO.BMI_APP+"\n 이름, 키, 몸무게 입력");
+                    bmi.setName(scanner.next());
+                    bmi.setHeight(scanner.next());
+                    bmi.setWeight(scanner.next());
+                    res = bmiService.getBmi(bmi);
+                    break;
                 case "2":
                     System.out.println(CalcApp.CALC_APP+"\n숫자1, 연사자, 숫자2 입력");
                     res = calcDemo.execute(scanner.nextInt(), scanner.next(), scanner.nextInt());
                 break;
                 case "3":
-                    System.out.println(GoolgeApp.GOOGLE_APP +"\n검색어 입력");
+                    System.out.println(GoolgeApp.GOOLGE_APP +"\n검색어 입력");
                     res = googleDemo.execute(scanner.next());
                     ;break;
                 case "4":
                     System.out.println(GradeApp.GRADE_TITLE+"\n이름, 국어, 영어, 수학 입력");
-                    res = calcDemo.execute(scanner.nextInt(), scanner.next(), scanner.nextInt());
+                    res = gradeDemo.execute(scanner.next(), scanner.nextInt(), scanner.nextInt(), scanner.nextInt());
                     ;break;
                 case "5":
                     System.out.println(LoginApp.LOGIN_APP+"\nID, PW, Name 입력");
