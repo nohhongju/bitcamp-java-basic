@@ -22,19 +22,28 @@ public class ArrayExam {
 
         System.out.println("Q1. 팀별 과제를 출력하세요.");
         String s = "";
-        for (int i = 0; i< arr.length; i++){
+        for (int i = 0; i < arr.length; i++){
             if (i%5==0){s += "\n";}
             s += i +" : "+arr[i]+"\t";
         }
         System.out.println(s);
         s = "";
         System.out.println("Q2. 팀장이 맡은 과제만 출력하세요.");
-        s = "";
-        s = arr[2]+", "+arr[7]+","+arr[13];
+        for (int i = 0; i < arr.length; i++){
+            if (arr[i].equals("홍정명")){
+                for (int a=0; a<4; a++){
+                    s += arr[i + a*5]+" , ";}
+                if (i==17){break;}
+            }
+        }
         System.out.println(s);
         s = "";
         System.out.println("Q3. 큐를 담당한 사람을 출력하세요.");
-        s = arr[15] + "를 담당한 사람: "+arr[0];
+        for (int i = 0; i < arr.length; i++){
+            if (arr[i].equals("스택")){
+                System.out.println(arr[i]+"을 담당한 사람은 : "+arr[i%5]);
+            }
+        }
         System.out.println(s);
 
     }
