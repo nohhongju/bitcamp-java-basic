@@ -11,8 +11,13 @@ package com.example.demo.auth.domain;
  * 2022-01-25    nohhongju    최초 생성
  * 2022-01-26    nohhongju    if 절과 switch, 삼항연산자 사용
  */
-public class LoginDTO {
+public class UserDTO {
     public static String LOGIN_APP = "로그인앱";
+
+    private final static UserDTO userDTO = new UserDTO();
+    private UserDTO(){}
+    public static UserDTO getInstance(){return userDTO;}
+
     private String id;
     private String pw;
     private String name;

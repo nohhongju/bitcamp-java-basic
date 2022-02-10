@@ -12,30 +12,34 @@ package com.example.demo.auth.domain;
  * 2022-01-26    nohhongju    if 절과 switch 추가, 4칙연산 가능하도록 개선한
  */
 public class CalcDTO {
-
    public static String CALC_APP = "계산기";
+
+   private final static CalcDTO calcDTO = new CalcDTO();
+   private CalcDTO(){}
+    public static CalcDTO getInstance(){return calcDTO;}
+
    private int num1;
    private String opcode;
    private int num2;
 
-   public int getNum1(){
-       return num1;
-   }
-   public void setNum1(int num1){
-       this.num1 = num1;
-   }
-   public String getOpcode(){
-       return opcode;
-   }
-   public void setOpcode(String opcode){
-       this.opcode = opcode;
-   }
-   public int getNum2(){
-       return num2;
-   }
-   public void setNum2(int num2){
-       this.num2 = num2;
-   }
+       public int getNum1 () {
+           return num1;
+       }
+       public void setNum1 ( int num1){
+           this.num1 = num1;
+       }
+       public String getOpcode () {
+           return opcode;
+       }
+       public void setOpcode (String opcode){
+           this.opcode = opcode;
+       }
+       public int getNum2 () {
+           return num2;
+       }
+       public void setNum2 ( int num2){
+           this.num2 = num2;
+       }
 
        /*
        if (opcode.equals("+")){

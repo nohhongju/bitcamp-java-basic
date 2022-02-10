@@ -13,6 +13,11 @@ package com.example.demo.auth.domain;
  */
 public class GoogleDTO {
     public static String GOOGLE = "Google";
+
+    private final static GoogleDTO googleDTO = new GoogleDTO();
+    private GoogleDTO(){}
+    public static GoogleDTO getInstance(){return googleDTO;}
+
     private String search;
 
     public String getSearch(){
