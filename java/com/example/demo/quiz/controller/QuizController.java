@@ -127,11 +127,19 @@ public class QuizController {
                             break;
                         case "4":
                             System.out.println("quickSort");
-                            feb10Service.quickSort(scanner);
+                            int[] arr1 = new int[10];
+                            for(int i = 0; i < arr1.length; i++){
+                                arr1[i] = (int) (Math.random() * 100);
+                            }
+                            feb10Service.quickSort(arr1, 0, arr1.length -1);
                             break;
                         case "5":
                             System.out.println("mergeSort");
-                            feb10Service.mergeSort(scanner);
+                            int[] arr2 = new int[10];
+                            for (int i = 0; i < arr2.length; i++){
+                                arr2[i] = (int)(Math.random()*100)+1;
+                            }
+                            feb10Service.mergeSort(arr2);
                             break;
                         case "6":
                             System.out.println("magicSquare");
