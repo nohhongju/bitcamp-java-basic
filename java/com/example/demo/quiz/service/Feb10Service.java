@@ -21,7 +21,7 @@ public interface Feb10Service {
     void selectionSort(Scanner scanner);
     //1인
     void quickSort();
-    void mergeSort(int[] arr);
+    void mergeSort();
     //1인
     void magicSquare(Scanner scanner);
     //1인

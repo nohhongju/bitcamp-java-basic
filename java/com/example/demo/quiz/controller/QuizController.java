@@ -22,7 +22,7 @@ public class QuizController {
         Feb08Service feb08Service = new Feb08ServiceImpl();
         Feb10Service feb10Service = new Feb10ServiceImpl();
         while (true){
-            System.out.println("[서브메뉴]\n 0) Exit 1) 2월6일 2) 2월7일 3) 2월8일 4) 2월10일");
+            System.out.println("\n[서브메뉴]\n 0) Exit 1) 2월6일 2) 2월7일 3) 2월8일 4) 2월10일");
             switch (scanner.next()){
                 case "0":
                     System.out.println("Exit");
@@ -127,16 +127,11 @@ public class QuizController {
                             break;
                         case "4":
                             System.out.println("quickSort");
-
                             feb10Service.quickSort();
                             break;
                         case "5":
                             System.out.println("mergeSort");
-                            int[] arr2 = new int[10];
-                            for (int i = 0; i < arr2.length; i++){
-                                arr2[i] = (int)(Math.random()*100)+1;
-                            }
-                            feb10Service.mergeSort(arr2);
+                            feb10Service.mergeSort();
                             break;
                         case "6":
                             System.out.println("magicSquare");

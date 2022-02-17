@@ -34,8 +34,13 @@ public class Feb10ServiceImpl implements Feb10Service{
         int[] arr = new int[10];
         for(int i = 0; i < arr.length; i++){
             arr[i] = (int) (Math.random() * 100);
+            System.out.print(arr[i]+"\t");
         }
+        System.out.println();
         quick(arr, 0, arr.length-1);
+        for (int i =0; i < arr.length; i++) {
+            System.out.print(arr[i]+"\t");
+        }
     }
     private static void quick(int[] arr, int start, int end){
         int part=partition(arr, start, end);
@@ -67,44 +72,42 @@ public class Feb10ServiceImpl implements Feb10Service{
     }
 
     @Override
-    public void mergeSort(int[] arr) {
 
-        
+    public void mergeSort() {
         // 랜덤 정수 ( 1 ~ 100) 사이의 10 개 정수 정렬
-        sort(arr, 0, arr.length);
-    }
-    private static void sort(int[] arr, int low, int high) {
-        if (high - low < 2) {
-            return;
+        int[] arr = new int[10];
+        for(int i = 0; i < arr.length; i++){
+            arr[i] = (int) (Math.random() * 100);
+            System.out.print(arr[i]+"\t");
         }
-
-        int mid = (low + high) / 2;//중앙값을 기준으로 2개그룹으로 분할
-        sort(arr, 0, mid);
-        sort(arr, mid, high);//정렬 후 병합
-        merge(arr, low, mid, high);
+        System.out.println();
+        merge(arr, 0, arr.length-1);
+        for (int i =0; i < arr.length; i++) {
+            System.out.print(arr[i]+"\t");
+        }
     }
-
-    private static void merge(int[] arr, int low, int mid, int high) {
-        int[] temp = new int[high - low];
-        int t = 0, l = low, h = mid;
-
-        while (l < mid && h < high) {
-            if (arr[l] < arr[h]) {
-                temp[t++] = arr[l++];
-            } else {
-                temp[t++] = arr[h++];
+        public void merge(int[] arr, int left, int right) {
+            int[] tmp = new int[arr.length];
+            if (left < right) {
+                int mid = (left + right) / 2;
+                merge(arr, left, mid);
+                merge(arr, mid + 1, right);
+                int leftIndex = left;
+                int midIndex = mid + 1;
+                int idx = leftIndex;
+                while (leftIndex <= mid || midIndex <= right) {
+                    if (midIndex > right || (leftIndex <= mid && arr[leftIndex] < arr[midIndex])) {
+                        tmp[idx++] = arr[leftIndex++];
+                    } else {
+                        tmp[idx++] = arr[midIndex++];
+                    }
+                }
+                for (int i = left; i <= right; i++) {
+                    arr[i] = tmp[i];
+                }
             }
         }
-        while (l < mid) {
-            temp[t++] = arr[l++];
-        }
-        while (h < high) {
-            temp[t++] = arr[h++];
-        }
-        for (int i = low; i < high; i++) {
-            arr[i] = temp[i - low];
-        }
-    }
+
 
     @Override
     public void magicSquare(Scanner scanner) {
