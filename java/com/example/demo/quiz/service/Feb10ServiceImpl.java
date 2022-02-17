@@ -30,7 +30,7 @@ public class Feb10ServiceImpl implements Feb10Service{
     }
 
     @Override
-    public void quickSort() { //실행안됨
+    public void quickSort() {
         int[] arr = new int[10];
         for(int i = 0; i < arr.length; i++){
             arr[i] = (int) (Math.random() * 100);
@@ -67,7 +67,9 @@ public class Feb10ServiceImpl implements Feb10Service{
     }
 
     @Override
-    public void mergeSort(int[] arr) { //실행안됨
+    public void mergeSort(int[] arr) {
+
+        
         // 랜덤 정수 ( 1 ~ 100) 사이의 10 개 정수 정렬
         sort(arr, 0, arr.length);
     }
@@ -81,7 +83,7 @@ public class Feb10ServiceImpl implements Feb10Service{
         sort(arr, mid, high);//정렬 후 병합
         merge(arr, low, mid, high);
     }
-    //잘 모르겠습니다.
+
     private static void merge(int[] arr, int low, int mid, int high) {
         int[] temp = new int[high - low];
         int t = 0, l = low, h = mid;
