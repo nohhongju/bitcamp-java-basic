@@ -30,13 +30,20 @@ public class Feb10ServiceImpl implements Feb10Service{
     }
 
     @Override
-    public void quickSort(int[] arr, int start, int end) { //실행안됨
+    public void quickSort() { //실행안됨
+        int[] arr = new int[10];
+        for(int i = 0; i < arr.length; i++){
+            arr[i] = (int) (Math.random() * 100);
+        }
+        quick(arr, 0, arr.length-1);
+    }
+    private static void quick(int[] arr, int start, int end){
         int part=partition(arr, start, end);
         if(start<part-1) {
-            quickSort(arr,start,part-1);
+            quick(arr,start,part-1);
         }
         if(end>part) {
-            quickSort(arr,part,end);
+            quick(arr,part,end);
         }
     }
     private static int partition(int[] arr,int start,int end) {

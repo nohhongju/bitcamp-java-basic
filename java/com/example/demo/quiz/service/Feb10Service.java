@@ -20,7 +20,7 @@ public interface Feb10Service {
     void insertionSort(Scanner scanner);
     void selectionSort(Scanner scanner);
     //1인
-    void quickSort(int[] arr, int start, int end);
+    void quickSort();
     void mergeSort(int[] arr);
     //1인
     void magicSquare(Scanner scanner);
