@@ -45,17 +45,17 @@ public class Feb10ServiceImpl implements Feb10Service{
     private static void quick(int[] arr, int start, int end){
         int part=partition(arr, start, end);
         if(start<part-1) {
-            quick(arr,start,part-1);
+            quick(arr,start,part-1);  //기준의 왼쪽 배열들
         }
         if(end>part) {
-            quick(arr,part,end);
+            quick(arr,part,end);  //기준의 오른쪽 배열들
         }
     }
     private static int partition(int[] arr,int start,int end) {
-        int pivot=arr[(start+end)/2];//중간 값 구하기
-        while(start<=end) {
-            while(arr[start]<pivot) start++;
-            while(arr[end]>pivot) end--;
+        int pivot=arr[(start+end)/2];  //임의의 피벗 값(기준 값)을 설정한다.
+        while(start<=end) {  //시작인덱스가 끝인덱스보다 작거나 같을 때 까지 계속 반복한다.
+            while(arr[start]<pivot) start++;  //기준 값보다 작으면 우측으로 이동한다.
+            while(arr[end]>pivot) end--;  //기준 값보다 크면 좌측으로 이동한다.
             if(start<=end) {
                 swap(arr,start,end);
                 start++;
