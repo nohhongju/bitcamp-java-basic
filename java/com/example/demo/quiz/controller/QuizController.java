@@ -115,15 +115,15 @@ public class QuizController {
                             break;
                         case "1":
                             System.out.println("bubbleSort");
-                            feb10Service.bubbleSort(scanner);
+                            feb10Service.bubbleSort();
                             break;
                         case "2":
                             System.out.println("insertionSort");
-                            feb10Service.insertionSort(scanner);
+                            feb10Service.insertionSort();
                             break;
                         case "3":
                             System.out.println("selectionSort");
-                            feb10Service.selectionSort(scanner);
+                            feb10Service.selectionSort();
                             break;
                         case "4":
                             System.out.println("quickSort");
@@ -135,15 +135,15 @@ public class QuizController {
                             break;
                         case "6":
                             System.out.println("magicSquare");
-                            feb10Service.magicSquare(scanner);
+                            //feb10Service.magicSquare();
                             break;
                         case "7":
                             System.out.println("zigzag");
-                            feb10Service.zigzag(scanner);
+                            feb10Service.zigzag();
                             break;
                         case "8":
                             System.out.println("rectangleStarPrint");
-                            feb10Service.rectangleStarPrint(scanner);
+                            feb10Service.rectangleStarPrint();
                             break;
                     }break;
                 default:
