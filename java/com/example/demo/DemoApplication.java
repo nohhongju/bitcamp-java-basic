@@ -16,7 +16,7 @@ public class DemoApplication {
 		Scanner scanner = new Scanner(System.in);
 		OopController phoneController = new OopController();
 		QuizController quizController = new QuizController();
-		AuthController memberController = new AuthController();
+		AuthController authController = new AuthController();
 
 		String s = "";
 		while (true){
@@ -27,7 +27,7 @@ public class DemoApplication {
 					s = "Exit";return;
 				case "1":
 					s = "Auth";
-					memberController.execute(scanner);
+					authController.execute(scanner);
 					break;
 				case "2":
 					s = "OOP";

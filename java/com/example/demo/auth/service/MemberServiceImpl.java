@@ -86,15 +86,11 @@ public class MemberServiceImpl implements MemberService {
 
     @Override
     public String getLogin(UserDTO login) {
-        String res = "";
-        String PASSWORD = "abc";
-        switch (PASSWORD){
-            case "abc": res = String.format("%s 님의 비번 %s 가 맞습니다. 로그인 성공",
-                    login.getName(), login.getPw()); break;
-            default: res = String.format("%s 의 ID는 맞고, 비번 %s 가 틀립니다. 로그인 실패 ",
-                    login.getId(), login.getPw()); break;
-        }
-        return res;
+        return (login.getPw().equals(UserDTO.PASSWORD)) ?
+                String.format(" %s 님의 비번 %s 가 맞습니다. 로그인 성공 ", login.getName(), login.getPw())
+                :
+                String.format(" %s 의 ID 는 맞고, 비번 %s 가 틀립니다. 로그인 실패 ", login.getId(), login.getPw())
+                ;
 
     }
 }
